@@ -3,8 +3,6 @@
 <html>
 	<head>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-	<script src="external/jquery/jquery.js"></script>
-<script src="jquery-ui.js"></script>
 <script type="text/javascript" src="noty-2.3.5/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 		<title>Trialer</title>
 		<meta charset="utf-8" />
@@ -21,63 +19,35 @@
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<script src="angular.min.js"></script>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/font-awesome.css">
 	</head>
 	<body>
-	<style>
-		nav ul{
-	background-color: #42a286;
-	overflow: hidden;
-	color: white;
-	padding: 0;
-	text-align: center;
-	margin: 0;
-}
-a {
-	text-decoration: none;
-	color: inherit;
-}
-nav ul li{
-	display: inline-block;
-	padding: 20px;
-}
-nav ul li:hover{
-	background-color: #399077;
-	border-bottom: 3px solid white;
-}
-.current{
-	border-bottom: 3px solid white;
-}
-	</style>
-		<nav id="navbar" style="margin: 0;">
-	<ul>
-		
-		<a href="#"><li class="current">Home</li></a>
-		<a href="#"><li>Terms of Service</li></a>
-	</ul>		
-	</nav>
-		<div id="page-wrapper" style="padding: 0;">
+		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header" style="padding: 0;">
+				<div id="header">
 
 					<!-- Logo -->
-						<h2 id="ban" style="font-size: 65px; margin: 0; padding: 0; color: black;"><b>TRIALER</b></h2>Try Before You Buy<br><br>
+						<h2 id="ban">Trialer.co.uk - <em>The #1 site to get trials!</em></h2>
 
 					<!-- Nav -->
-						
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="index.html">Home</a></li>
+								
+								<li><a href="tos.html">Terms of Service</a></li>
+								
+								
+							</ul>
+						</nav>
 
 				</div>
 				<div class="test" ng-app="App" ng-controller="Controller">
 			<!-- Banner -->
+				<section id="banner">
 				
-				
-					
-						<br><center><h2 style="color: black;">Search for products: <em>Simply type it in the textbox</em></h2></center>
-						<center><input class="tb1" ng-model="name" type="text" placeholder="Search here.." style="width: 50%; color: black;"></center><br><hr>
+					<header>
+						<h2>Search for products: <em>Simply type it in the textbox</em></h2>
+						<center><input class="tb1" ng-model="name" type="text" placeholder="Search here.." style="width: 50%; color: black;"></center>
 						<style>
 						.tb1 {
 						color: #0090ff;
@@ -86,14 +56,14 @@ nav ul li:hover{
 							text-decoration: none;
 						}
 						</style>
-					
-				
+					</header>
+				</section>
 
 			<!-- Highlights -->
-			<div id="header" style="padding: 0;">
-				<div class="container" style="margin-top: 0; padding-top: 0;">
+			<center><h2>Our current products:</h2></center>
+				<section class="wrapper style1">
 				
-					
+					<div class="container">
 			<script>
 angular.module('App', [])
 .controller('Controller', function($scope){
@@ -103,83 +73,58 @@ angular.module('App', [])
 		"country": "All countries except Japan",
 		"img":"images/crunchy.png",
 		"description":"You can set it to everything you want!",	
-		"div":"crunch", 
-		"ma":"Click on the desired product tab to get the trial!",
-		"cat":"movies"
+		"div":"crunch"
 		},
 		{
 		"name": "Rhapsody",
 		"country": "US only, be at the right spot",
 		"img":"images/rhap.png",
-		"description":"You can set it to everything you want!", 
-		"ma":"Click on the desired product tab to get the trial!",
-		"div":"rhap"
+		"description":"You can set it to everything you want!"
 		},
 		{
 		"name": "Febreze",
 		"country": "US only",
 		"img":"images/feb.jpg",
-		"description":"You can set it to everything you want!", 
-		"ma":"Click on the desired product tab to get the trial!",
-		"cat":"cleaning"
+		"description":"You can set it to everything you want!"
 		},
 		{
 		"name": "Kellogs Froot Loops",
 		"country": "US only",
 		"img":"images/kel.jpg",
-		"description":"You can set it to everything you want!", 
-		"ma":"Click on the desired product tab to get the trial!"
+		"description":"You can set it to everything you want!"
 		},
 		{
 		"name": "Pure Asia Garcinia Weight Loss",
 		"country": "US, AU, CA, UK and NZ only",
 		"img":"images/bottle.png",
-		"description":"You can set it to everything you want!", 
-		"ma":"Click on the desired product tab to get the trial!"
+		"description":"You can set it to everything you want!"
 		},
 		{
 		"name": "Free Computer",
 		"img":"images/pc.png",
-		"description":"You can set it to everything you want!", 
-		"ma":"Click on the desired product tab to get the trial!"
+		"description":"You can set it to everything you want!"
 		}
 		
 	];
 
 });
-</script><script>
-  $(function() {
-    $( document ).tooltip();
-  });
-  </script>	
+</script>
 				
-				<h2 style="margin: 0'; padding: 0; color: black;">Our current products:</h2>
+				<table style="width: 100%; height: 100%;" id="MAND">
 					
-				<a href="#" style="text-decoration: none; color: black;"><table style="width: 100%; height: 100%;" id="{{artist.div}}">
-
-					<tbody id="hoveren" >
-						<tr class="list" ng-repeat="artist in artists | filter:name">
+					<tbody id="hoveren">
+						<tr ng-repeat="artist in artists | filter:name">
 						
-						<td class="list" id="{{artist.div}}"><img id="{{artist.div}}" style="vertical-align: middle; align: right; max-width: 100%;
+						<td class="user-name" id="{{artist.div}}"><img id="{{artist.div}}" style="vertical-align: middle; align: right; max-width: 100%;
     max-height: 100%;" src="{{artist.img}}"></td>
-						<td class="list" id="{{artist.div}}" style="vertical-align: middle; align: right; max-width: 100%;
-    max-height: 100%;">{{artist.name}}<br>{{artist.description}}<br>{{artist.country}}<br></td>
-	
-						<td><p style="display: none;">{{artist.cat}}</p></td>
+						<td class="user-email" id="{{artist.div}}" style="vertical-align: middle; align: right; max-width: 100%;
+    max-height: 100%;">{{artist.name}}<br>{{artist.description}}<br>{{artist.country}}<br><em style="font-size: 25px; display: none;" id="fade"><center>Click on the desired product tab to go to the link!</center></em></td>
+						
 						</tr>
 						
 					</tbody>
-				</table></a>
-				<style>
-			.list:hover {
-    background-color:#A9F5F2;
-    -ms-transform: scale(1.02,1.02); /* IE 9 */
-    -webkit-transform: scale(1.02,1.02); /* Safari */
-    transform: scale(1.02,1.02);
-    transition: all 0.1s;
-}	
-
-</style>
+				</table>
+				
 				
 				
 				
@@ -223,7 +168,7 @@ angular.module('App', [])
    
 	$("#hoveren").css("border", "1px solid #000");
 	$(".btn").css("background", "#3cb0fd", "background", "#000", "background", "#3cb0fd");
-	
+	$("#fade").fadeIn("slow");
   }
     
 );
@@ -238,10 +183,6 @@ $( "#hoveren" ).mouseleave(
 	$("#MAND").on('click', '#crunch', function() {
   window.location.href = "http://example.com/new_url";
 });
-	$("#rhap").function() {
-  window.location.href = "http://example.com/new_url";
-});
-	
 	
 	
 	
@@ -254,7 +195,7 @@ $( "#hoveren" ).mouseleave(
 						<section id="cta" class="wrapper style3">
 					<div class="container">
 						<header>
-							<form action="" method="post" class="subscribe-form">
+							<form action="subscribe.php" method="post" class="subscribe-form">
                             <center>
 							<h2>Get notified when we have new trials!</h2>
                                 <input type="email" id="subscribe-email" style="width: 50%; color: black;"placeholder="Enter your email..."><br>
